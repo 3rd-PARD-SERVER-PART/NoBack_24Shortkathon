@@ -1,6 +1,8 @@
 package com.example.demo.Post.Entity;
 
+import com.example.demo.Comment.DTO.CommentReadDTO;
 import com.example.demo.Comment.Entity.Comment;
+import com.example.demo.User.Entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +10,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
-
 @Entity
 @Getter
 @NoArgsConstructor
@@ -24,8 +25,17 @@ public class Post {
     private String keyword;
     private String imageUrl;
     private String text;
-    private int like;
+    private int likeCount1;
+    private int likeCount2;
+    private int likeCount3;
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
+    // Post와 User 간의 다대일 관계 설정
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false) // user_id 컬럼을 외래키로 사용하고, null 값을 허용하지 않음
+    private User myUser; // 해당 게시물을 생성한 사용자
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
     private List<Comment> comments;
+
+
 }

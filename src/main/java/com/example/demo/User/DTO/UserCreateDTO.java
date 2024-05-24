@@ -7,4 +7,3 @@ public class UserCreateDTO {
     private String nickname;
 
 }
-

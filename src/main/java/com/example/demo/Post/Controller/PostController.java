@@ -21,9 +21,9 @@ public class PostController {
         return "게시물 생성됨";
     }
 
-    @GetMapping("")
-    public List<PostReadDTO> findAllPosts() {
-        return postService.findAll();
+    @GetMapping("/all/{id}")
+    public List<PostReadDTO> findAllPosts(@PathVariable Long id) {
+        return postService.findAll(id);
     }
 
     @GetMapping("/{id}")

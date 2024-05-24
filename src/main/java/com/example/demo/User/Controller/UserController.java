@@ -16,7 +16,7 @@ public class UserController {
 
     @PostMapping("")
     public String createUser(@RequestBody UserCreateDTO dto) {
-        userService.createMember(dto);
+        userService.createUser(dto);
         return "유저 들어옴";
     }
 

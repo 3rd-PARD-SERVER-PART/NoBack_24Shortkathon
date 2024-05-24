@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserRepo userRepo;
 
-    public void createMember(UserCreateDTO dto) {
+    public void createUser(UserCreateDTO dto) {
         userRepo.save(User.toEntity(dto));
     }
 
