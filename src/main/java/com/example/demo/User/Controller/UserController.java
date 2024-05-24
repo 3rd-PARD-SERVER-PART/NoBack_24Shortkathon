@@ -17,7 +17,7 @@ public class UserController {
     @PostMapping("")
     public String createUser(@RequestBody UserCreateDTO dto) {
         userService.createMember(dto);
-        return "파드에 가입을 축하드립니다.";
+        return "유저 들어옴";
     }
 
     @GetMapping("")
