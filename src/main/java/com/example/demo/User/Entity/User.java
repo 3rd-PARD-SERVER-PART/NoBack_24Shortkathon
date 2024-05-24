@@ -1,7 +1,6 @@
 package com.example.demo.User.Entity;
 
 import com.example.demo.User.DTO.UserCreateDTO;
-import com.example.demo.User.DTO.UserReadDTO;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,9 +26,4 @@ public class User {
                 .name(dto.getNickname())
                 .build();
     }
-
-    public void update(UserReadDTO dto) {
-        this.name = dto.getName();
-    }
 }
-

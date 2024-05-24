@@ -21,7 +21,7 @@ public class UserController {
     }
 
     @GetMapping("")
-    public List<UserReadDTO> findAllUsers() {
+    public List<UserReadDTO> findAllUsers(){
         return userService.findAll();
     }
 
@@ -30,11 +30,6 @@ public class UserController {
         return userService.findById(id);
     }
 
-    @PatchMapping("/{id}")
-    public String updateById(@PathVariable Long id, @RequestBody UserReadDTO dto) {
-        userService.update(id, dto);
-        return "수정됨";
-    }
 
     @DeleteMapping("/{id}")
     public String deleteById(@PathVariable Long id) {
