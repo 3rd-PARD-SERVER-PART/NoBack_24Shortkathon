@@ -38,7 +38,7 @@ public class ImageService {
                 return ResponseEntity.badRequest().body(null);
             }
 
-            String uploadDir = "/Users/ision/Desktop/Server-Sion/Shorkathon/Shorkathon/src/main/resources/static/images";
+            String uploadDir = "/Users/oseongjin/Desktop/24_Shorkathon/NoBack/src/main/resources/static/images";
             Files.createDirectories(Paths.get(uploadDir));
 
             String fileName = new File(tempFilePath).getName();
