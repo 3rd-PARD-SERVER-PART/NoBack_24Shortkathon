@@ -25,6 +25,5 @@ public class PostReadDTO {
     private int likeCount2;
     private int likeCount3;
     private UserReadDTO user;
-    //    private String comments;
     private List<CommentReadDTO> comments;
 }

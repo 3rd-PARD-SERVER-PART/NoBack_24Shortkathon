@@ -21,9 +21,14 @@ public class PostController {
         return "게시물 생성됨";
     }
 
-    @GetMapping("/all/{id}")
-    public List<PostReadDTO> findAllPosts(@PathVariable Long id) {
-        return postService.findAll(id);
+    @GetMapping("/all")
+    public List<PostReadDTO> findAllPosts() {
+        return postService.findAll();
+    }
+
+    @GetMapping("/user/{id}")
+    public List<PostReadDTO> findAllPostsByUserId(@PathVariable Long id) {
+        return postService.findAllByUserId(id);
     }
 
     @GetMapping("/{id}")
@@ -35,5 +40,10 @@ public class PostController {
     public String deletePost(@PathVariable Long id) {
         postService.deleteById(id);
         return "게시물 삭제";
+    }
+
+    @GetMapping("/top5")
+    public List<PostReadDTO> getTop5PostsByLikeSum() {
+        return postService.findTop5ByLikeSum();
     }
 }
